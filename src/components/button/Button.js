@@ -6,9 +6,7 @@ const Button = styled.button`
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(2.8px);
 -webkit-backdrop-filter: blur(2.8px);
-border: 1px solid rgba(21, 50, 52, 0.21);
     border-radius: 3px;
-    transition: filter .3s ease;
     color: white;
     outline: none;
     border: none;
