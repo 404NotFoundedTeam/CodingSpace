@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const HeaderWrapper = styled.div`
   padding: 10px 20px;
@@ -15,6 +15,6 @@ const HeaderWrapper = styled.div`
       color: #3de8e7;
     }
   }
-`
+`;
 
 export default HeaderWrapper;

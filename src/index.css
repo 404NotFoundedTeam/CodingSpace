@@ -8,9 +8,11 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url(../public/img/bg.jpg); */
+  background-image: url(../public/img/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Quintessential', cursive;
+
 }
 
 ::-webkit-scrollbar {
