@@ -1,0 +1,39 @@
+.canvas {
+    min-height: 100vh !important;
+    position: absolute !important;
+    z-index: -1;
+
+}
+
+.canvas2 {
+    min-height: 100vh !important;
+    position: absolute !important;
+    bottom: -50%;
+    right: -200px;
+    z-index: -1000;
+}
+
+.canvasWrapper {
+    width: 50%;
+    position: relative !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    font-size: 150px;
+    transform-style: preserve-3d;
+    transform: rotateX(25deg);
+    text-shadow: 12px 10px 8px rgba(0, 0, 0, 0.411);
+}
+
+
+.CodingSpace {
+    /* position: absolute !important;
+    top : 50%;
+    left : 50%; */
+    font-size: 95px;
+    color: #f4ffff
+}

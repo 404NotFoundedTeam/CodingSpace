@@ -4,20 +4,23 @@ import { firebaseConfig } from "./config";
 
 import {
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   getAuth,
   signInWithEmailAndPassword,
-  signOut,
   sendEmailVerification,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 
 import { getDatabase } from "firebase/database";
+
+import { isVerified } from "../Consts/consts";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase();
 const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
 const createUser = (userData, password) => {
   createUserWithEmailAndPassword(auth, userData.email, password)
@@ -35,14 +38,45 @@ const createUser = (userData, password) => {
     });
 };
 
+console.log(isVerified);
+
 function signInF(dataUser) {
   signInWithEmailAndPassword(auth, dataUser.email, dataUser.password)
     .then((cred) => {
       console.log("sign in");
+      console.log(cred.user);
     })
     .catch(() => {
       alert("parol yoki email xato");
     });
 }
 
-export { createUser, signInF };
+function signUpWithG() {
+  console.log("With Google");
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      console.log(user, credential, token);
+      console.log("google sign up ulandi");
+      console.log(result);
+      // ...
+    })
+    .catch((error) => {
+      console.log(error);
+      // Handle Errors here.
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+      // The email of the user's account used.
+      // const email = error.email;
+      // The AuthCredential type that was used.
+      // const credential = GoogleAuthProvider.credentialFromError(error);
+      // console.log(error);
+      // ...
+    });
+}
+
+export { createUser, signInF, signUpWithG };

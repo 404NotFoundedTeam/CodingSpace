@@ -1,4 +1,4 @@
 const userUid = null;
-const isVerified = false;
+var isVerified = false;
 
 export { userUid, isVerified };
